@@ -141,3 +141,69 @@ class FuncoesTest(TestCase):
         esperado = 5
         resposta = obj.contar('max')
         self.assertEqual(resposta, esperado)
+
+    def test_ehmenor_string_simples(self):
+        obj=Funcoes('hello world')
+        esperado = True
+        resposta = obj.ehmenor()
+        self.assertEqual(resposta, esperado)
+
+    def test_ehmenor_string_mix(self):
+        obj=Funcoes('Hello World')
+        esperado = False
+        resposta = obj.ehmenor()
+        self.assertEqual(resposta, esperado)
+
+    def test_ehmenor_caracteres(self):
+        obj=Funcoes('hello world !@#$')
+        esperado = True
+        resposta = obj.ehmenor()
+        self.assertEqual(resposta, esperado)
+
+    def test_ehmenor_vazio(self):
+        obj=Funcoes('')
+        esperado = False
+        resposta = obj.ehmenor()
+        self.assertEqual(resposta, esperado)
+
+    def test_ehmaior_string_simples(self):
+        obj=Funcoes('HELLO WORLD')
+        esperado = True
+        resposta = obj.ehmaior()
+        self.assertEqual(resposta, esperado)
+
+    def test_ehmaior_string_mix(self):
+        obj=Funcoes('Hello World')
+        esperado = False
+        resposta = obj.ehmaior()
+        self.assertEqual(resposta, esperado)
+
+    def test_ehmaior_caracteres(self):
+        obj=Funcoes('HELLO !@#$')
+        esperado = True
+        resposta = obj.ehmaior()
+        self.assertEqual(resposta, esperado)
+
+    def test_ehmaior_vazio(self):
+        obj=Funcoes('')
+        esperado = False
+        resposta = obj.ehmaior()
+        self.assertEqual(resposta, esperado)
+
+    def test_ehespaco_soespaco(self):
+        obj=Funcoes('    ')
+        esperado = True
+        resposta = obj.ehespaco()
+        self.assertEqual(resposta, esperado)
+        
+    def test_ehespaco_mix(self):
+        obj=Funcoes('hello world')
+        esperado = False
+        resposta = obj.ehespaco()
+        self.assertEqual(resposta, esperado)
+        
+    def test_ehespaco_vazio(self):
+        obj=Funcoes('')
+        esperado = False
+        resposta = obj.ehespaco()
+        self.assertEqual(resposta, esperado) 

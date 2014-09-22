@@ -107,3 +107,30 @@ class Funcoes(object):
                 contador += 1
                 localizador += 1
         return contador
+
+    def ehmenor(self):
+        if self.conjunto == '':
+            return False
+        else:
+            for x in self.conjunto:
+                if x in self.upper:
+                    return False
+            return True
+
+    def ehmaior(self):
+        if self.conjunto == '':
+            return False
+        else:
+            for x in self.conjunto:
+                if x in self.lower:
+                    return False
+            return True
+
+    def ehespaco(self):
+        if self.conjunto == '':
+            return False
+        else:
+            for x in self.conjunto:
+                if x != ' ':
+                    return False
+            return True
